@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TECHVORO | Place Your Order</title>
+<meta name="description" content="Order your stylish TECHVORO bracelet online. Enter your delivery details and send your order request through WhatsApp.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #87583f;
+    --dark: #38271f;
+    --cream: #faf6f1;
+    --border: #e5ddd5;
+    --muted: #716861;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3f0;
+    color: #292522;
+    line-height: 1.6;
+}
+
+/* HEADER AND LOGO */
+
+.header {
+    padding: 14px 6%;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+}
+
+.brand-logo svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--dark);
+}
+
+.brand-tagline {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: min(760px, 94%);
+    margin: 30px auto;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-title h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.page-title p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 22px;
+}
+
+.product-image {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: var(--cream);
+    display: block;
+}
+
+.product-content {
+    padding: 22px;
+}
+
+.product-content h2 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.product-price {
+    color: var(--primary);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.old-price {
+    font-size: 15px;
+    font-weight: normal;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+
+.product-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 13px;
+    background: var(--cream);
+    border-radius: 7px;
+}
+
+.product-select input {
+    width: 19px;
+    height: 19px;
+    accent-color: var(--primary);
+}
+
+.product-select label {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CUSTOMER FORM */
+
+.form-card {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.form-card h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.form-intro {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 23px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.required {
+    color: #c0392b;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #dcd3cb;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 14px;
+    background: white;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px #87583f18;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* QUANTITY */
+
+.quantity-control {
+    display: flex;
+    width: fit-content;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.quantity-control button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: var(--cream);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.quantity-control input {
+    width: 55px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.quantity-control input::-webkit-inner-spin-button,
+.quantity-control input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ORDER SUMMARY */
+
+.order-summary {
+    padding: 18px;
+    margin: 22px 0;
+    border-radius: 8px;
+    background: var(--cream);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 9px;
+    font-size: 14px;
+}
+
+.summary-row.total {
+    border-top: 1px solid var(--border);
+    padding-top: 13px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-size: 19px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* CONSENT */
+
+.consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.consent input {
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    accent-color: var(--primary);
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #168b50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.whatsapp-button:hover {
+    background: #116d3e;
+}
+
+.whatsapp-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    margin-top: 13px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--dark);
+    color: white;
+    padding: 42px 6% 18px;
+    margin-top: 35px;
+}
+
+.footer-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+    gap: 30px;
+}
+
+.footer-brand h2 {
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.footer-brand p {
+    color: #dfd3ca;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.footer-links h3 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: #f0c9a9;
+}
+
+.footer-links a {
+    display: block;
+    width: fit-content;
+    color: #e5ddd5;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #f0c9a9;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1150px;
+    margin: 25px auto 0;
+    border-top: 1px solid #60483a;
+    padding-top: 16px;
+    text-align: center;
+    font-size: 12px;
+    color: #dfd3ca;
+}
+
+.footer-bottom p + p {
+    margin-top: 5px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 760px) {
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .page-title h1 {
+        font-size: 25px;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+
+    .product-content,
+    .form-card {
+        padding: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .product-content h2 {
+        font-size: 20px;
+    }
+
+    .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .brand-name {
+        font-size: 21px;
+    }
+
+    .footer {
+        padding: 30px 5% 16px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 12px;
+    }
+
+    .footer-brand h2 {
+        font-size: 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+    <a href="index.html" class="brand" aria-label="TECHVORO home">
+
+        <div class="brand-logo">
+            <svg viewBox="0 0 50 50" role="img" aria-label="TECHVORO logo">
+                <circle cx="25" cy="25" r="23" fill="#87583f"/>
+                <circle cx="25" cy="25" r="16" fill="none"
+                        stroke="#ffffff" stroke-width="2.5"/>
+                <path d="M17 18 H33 M25 18 V33"
+                      stroke="#ffffff" stroke-width="3"
+                      stroke-linecap="round"/>
+                <circle cx="34" cy="34" r="4" fill="#e8c9a9"/>
+            </svg>
+        </div>
+
+        <div class="brand-text">
+            <span class="brand-name">TECHVORO</span>
+            <span class="brand-tagline">STYLE ON YOUR WRIST.</span>
+        </div>
+
+    </a>
+</header>
+
+<main class="container">
+
+    <div class="page-title">
+        <h1>Complete Your Order</h1>
+        <p>Enter your delivery details to order your bracelet.</p>
+    </div>
+
+    <!-- PRODUCT IMAGE -->
+
+    <section class="product-card">
+
+        <img
+            class="product-image"
+            src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1000&q=85"
+            alt="TECHVORO Classic Elegance Bracelet"
+        >
+
+        <div class="product-content">
+
+            <h2>Classic Elegance Bracelet</h2>
+
+            <p class="product-description">
+                Stylish bracelet for everyday wear and special occasions.
+            </p>
+
+            <div class="product-price">
+                ₹499
+                <span class="old-price">₹799</span>
+            </div>
+
+            <div class="product-select">
+                <input type="checkbox" id="select-product" checked>
+
+                <label for="select-product">
+                    Select this product for your order
+                </label>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CUSTOMER DETAILS -->
+
+    <section class="form-card">
+
+        <h2>Customer Details</h2>
+
+        <p class="form-intro">
+            Fields marked with * are required.
+        </p>
+
+        <form id="order-form">
+
+            <div class="form-group">
+                <label for="customer-name">
+                    Full Name <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customerName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                    maxlength="80"
+                >
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="mobile">
+                        Mobile Number <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="10-digit mobile number"
+                        autocomplete="tel-national"
+                        inputmode="numeric"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+
+                    <div class="quantity-control">
+                        <button type="button" id="minus"
+                                aria-label="Decrease quantity">−</button>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            value="1"
+                            min="1"
+                            max="10"
+                            required
+                        >
+
+                        <button type="button" id="plus"
+                                aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="address">
+                    Full Address <span class="required">*</span>
+                </label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="House number, street, area, landmark"
+                    autocomplete="street-address"
+                    required
+                    maxlength="300"
+                ></textarea>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="state">
+                        State <span class="required">*</span>
+                    </label>
+
+                    <select id="state" name="state" required>
+                        <option value="">Select State / UT</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chhattisgarh</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Uttarakhand</option>
+                        <option>West Bengal</option>
+                        <option>Delhi</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Ladakh</option>
+                        <option>Puducherry</option>
+                        <option>Chandigarh</option>
+                        <option>Andaman and Nicobar Islands</option>
+                        <option>Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option>Lakshadweep</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">
+                        City <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Enter your city"
+                        autocomplete="address-level2"
+                        required
+                        maxlength="80"
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="zip">
+                        PIN / ZIP Code <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="zip"
+                        name="zip"
+                        placeholder="6-digit PIN code"
+                        inputmode="numeric"
+                        autocomplete="postal-code"
+                        pattern="[0-9]{6}"
+                        maxlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="landmark">Landmark (Optional)</label>
+
+                    <input
+                        type="text"
+                        id="landmark"
+                        name="landmark"
+                        placeholder="Nearby school, shop, etc."
+                        maxlength="100"
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="payment">Payment Preference</label>
+
+                <select id="payment" name="payment">
+                    <option value="Cash on Delivery (requested)">
+                        Cash on Delivery (requested)
+                    </option>
+                    <option value="Online payment (to be arranged)">
+                        Online payment (to be arranged)
+                    </option>
+                </select>
+            </div>
+
+            <!-- ORDER SUMMARY -->
+
+            <div class="order-summary">
+
+                <div class="summary-row">
+                    <span>Unit Price</span>
+                    <span>₹499</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Quantity</span>
+                    <span id="summary-quantity">1</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery Charge</span>
+                    <span>To be confirmed</span>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Product Subtotal</span>
+                    <span id="total">₹499</span>
+                </div>
+
+            </div>
+
+            <label class="consent">
+                <input type="checkbox" id="consent" required>
+
+                <span>
+                    I confirm that the details entered above are correct
+                    and agree to share them with the store through WhatsApp
+                    to process my order.
+                </span>
+            </label>
+
+            <button type="submit" class="whatsapp-button"
+                    id="submit-button">
+                Order on WhatsApp
+            </button>
+
+            <p class="form-note">
+                WhatsApp will open with your order details.
+                You must press Send in WhatsApp to send the message.
+            </p>
+
+        </form>
+    </section>
+
+</main>
+
+<!-- FOOTER WITHOUT FAQ -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h2>TECHVORO</h2>
+            <p>Style on your wrist.</p>
+            <p>
+                Discover stylish bracelets for everyday wear
+                and special occasions.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About Us</a>
+            <a href="index.html#contact">Contact Us</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Customer Support</h3>
+            <a href="#order-form">Place an Order</a>
+            <a href="delivery.html">Delivery Information</a>
+            <a href="returns.html">Returns &amp; Refunds</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Legal</h3>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>
+            &copy; <span id="current-year"></span> TECHVORO.
+            All rights reserved.
+        </p>
+        <p>Thank you for shopping with us!</p>
+    </div>
+
+</footer>
+
+<script>
+/* WhatsApp recipient: India country code 91 + mobile number */
+const WHATSAPP_NUMBER = "918271734883";
+
+const PRODUCT_NAME = "Classic Elegance Bracelet";
+const PRODUCT_PRICE = 499;
+
+const PRODUCT_IMAGE =
+    "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1000&q=85";
+
+const form = document.getElementById("order-form");
+const quantityInput = document.getElementById("quantity");
+const productCheckbox = document.getElementById("select-product");
+const submitButton = document.getElementById("submit-button");
+
+function getQuantity() {
+    let quantity = parseInt(quantityInput.value, 10);
+
+    if (!Number.isFinite(quantity)) {
+        quantity = 1;
+    }
+
+    quantity = Math.max(1, Math.min(10, quantity));
+    quantityInput.value = quantity;
+
+    return quantity;
+}
+
+function updateTotal() {
+    const quantity = getQuantity();
+
+    document.getElementById("summary-quantity").textContent = quantity;
+
+    const total = productCheckbox.checked
+        ? PRODUCT_PRICE * quantity
+        : 0;
+
+    document.getElementById("total").textContent =
+        "₹" + total.toLocaleString("en-IN");
+
+    submitButton.disabled = !productCheckbox.checked;
+}
+
+document.getElementById("minus").addEventListener("click", function() {
+    quantityInput.value = Math.max(1, getQuantity() - 1);
+    updateTotal();
+});
+
+document.getElementById("plus").addEventListener("click", function() {
+    quantityInput.value = Math.min(10, getQuantity() + 1);
+    updateTotal();
+});
+
+quantityInput.addEventListener("change", updateTotal);
+productCheckbox.addEventListener("change", updateTotal);
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) {
+        return;
+    }
+
+    if (!productCheckbox.checked) {
+        alert("Please select the product before placing your order.");
+        return;
+    }
+
+    const name = document.getElementById("customer-name").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const state = document.getElementById("state").value;
+    const city = document.getElementById("city").value.trim();
+    const zip = document.getElementById("zip").value.trim();
+    const landmark = document.getElementById("landmark").value.trim();
+    const payment = document.getElementById("payment").value;
+    const quantity = getQuantity();
+    const total = PRODUCT_PRICE * quantity;
+
+    const message = [
+        "🛍️ *NEW TECHVORO ORDER REQUEST*",
+        "",
+        "📷 *Product Image:*",
+        PRODUCT_IMAGE,
+        "",
+        "📦 *Product Details*",
+        "Product: " + PRODUCT_NAME,
+        "Unit Price: ₹" + PRODUCT_PRICE,
+        "Quantity: " + quantity,
+        "Product Subtotal: ₹" + total.toLocaleString("en-IN"),
+        "",
+        "👤 *Customer Details*",
+        "Name: " + name,
+        "Mobile: " + mobile,
+        "",
+        "🏠 *Delivery Address*",
+        "Address: " + address,
+        "Landmark: " + (landmark || "Not provided"),
+        "City: " + city,
+        "State: " + state,
+        "PIN/ZIP: " + zip,
+        "",
+        "💳 Payment Preference: " + payment,
+        "",
+        "Please confirm product availability, delivery charges,",
+        "final payable amount and order details."
+    ].join("\n");
+
+    const whatsappURL =
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+});
+
+/* Automatically update copyright year */
+document.getElementById("current-year").textContent =
+    new Date().getFullYear();
+
+updateTotal();
+</script>
+
+</body>
+</html>
